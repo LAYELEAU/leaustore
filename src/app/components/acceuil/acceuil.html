@@ -1,0 +1,145 @@
+
+<app-header></app-header>
+
+
+
+<section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-black text-gray-900 mb-12 text-center">
+                Nos <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Produits Vedettes</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @for (produit of produits(); track produit.id) {
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:shadow-xl hover:scale-105">
+                        <img [src]="produit.image" [alt]="produit.nom" class="w-full h-64 object-cover">
+                        <div class="p-6">
+                            <a [routerLink]="['/detail-produit', produit.id]"> voir detail</a>
+                           <h3 class="text-2xl font-bold mb-2 text-gray-900 hover:text-blue-600 transition-colors cursor-pointer">{{ produit.nom }}
+                             </h3>
+                             <p>stock: {{ produit.stock }}</p>  
+                            <p class="text-gray-600 mb-4">{{ produit.description }}</p>
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-lg font-bold text-blue-600">{{ produit.prix }}€</span>
+                              
+                            </div>
+                            <div class="flex gap-4">
+                             <button 
+                                class="btn-cart flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/50 hover:-translate-y-0.5 cursor-pointer"
+                                (click)="ajouterAuPanier(produit)">
+                                   <i class="fas fa-shopping-cart"></i>
+                                    <span>Ajouter au Panier</span>
+                             </button>
+                             <button 
+                                class="px-4 py-3 bg-gray-100 text-gray-700 rounded-xl hover:bg-gray-200 hover:text-red-500 transition-all duration-300 cursor-pointer"
+                                (click)="ajouterAuxFavoris(produit)">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                          </div>
+                         </div>
+                    </div>
+                }
+            </div>
+
+            <!-- Bouton Voir Plus -->
+            <div class="text-center mt-12">
+                <button class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold text-lg rounded-full hover:shadow-2xl hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300">
+                    <span class="flex items-center gap-2">
+                        Voir tous les produits
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+<section class="py-16 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-black text-white mb-12 text-center">
+                Nos <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Catégories</span>
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Ordinateurs -->
+                <div [routerLink]="['/categorie', 'ordinateur']" class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer">
+                    <img src="assets/images/ordinateur.jpeg" alt="Ordinateurs" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                        <div>
+                            
+                                <h3   class="text-2xl font-bold text-white mb-1">Ordinateurs</h3>
+                           
+                            
+                            <p class="text-gray-300 text-sm">250+ produits</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Téléphones -->
+                <div [routerLink]="['/categorie', 'telephone']" class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer">
+                    <img src="assets/images/portable.jpeg" alt="Téléphones" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1">Téléphones</h3>
+                            <p class="text-gray-300 text-sm">180+ produits</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tablettes -->
+                <div [routerLink]="['/categorie', 'tablette']" class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer">
+                    <img src="assets/images/tablette.jpeg" alt="Tablettes" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1">Tablettes</h3>
+                            <p class="text-gray-300 text-sm">120+ produits</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Écouteurs -->
+                <div [routerLink]="['/categorie', 'ecouteur']" class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer">
+                    <img src="assets/images/ecouteur.jpeg" alt="Écouteurs" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1">Écouteurs</h3>
+                            <p class="text-gray-300 text-sm">90+ produits</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 class="text-4xl font-black text-gray-900 mb-12 text-center">
+            Pourquoi <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Choisir Leaustore ?</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+                <i class="fas fa-shipping-fast text-5xl text-blue-600 mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Livraison Rapide</h3>
+                <p class="text-gray-600">Profitez de notre service de livraison rapide et fiable pour recevoir vos produits en un temps record.</p>
+            </div>
+            <div class="text-center">
+                <i class="fas fa-headset text-5xl text-blue-600 mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Support 24/7</h3>
+                <p class="text-gray-600">Notre équipe de support est disponible 24/7 pour répondre à toutes vos questions et vous assister.</p>
+            </div>
+            <div class="text-center">
+                <i class="fas fa-shield-alt text-5xl text-blue-600 mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Paiement Sécurisé</h3>
+                <p class="text-gray-600">Achetez en toute confiance grâce à notre système de paiement sécurisé et protégé.</p>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    
+
+
+
+    
+
+    
+

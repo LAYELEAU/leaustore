@@ -1,0 +1,124 @@
+/* ============================================
+   NAVBAR STYLES - TechStore
+   Glassmorphism Navigation Bar
+   ============================================ */
+
+/* Glassmorphism effect */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Alternative: Version avec fond sombre */
+.glass-nav-dark {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Navbar fixée en haut */
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/* Ajout d'ombre au scroll (optionnel - ajouter via JS) */
+.navbar-scrolled {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablette */
+@media (max-width: 1024px) {
+    .glass-nav {
+        backdrop-filter: blur(16px);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .glass-nav {
+        backdrop-filter: blur(12px);
+    }
+}
+
+/* ============================================
+   NOTES D'UTILISATION
+   ============================================ */
+
+/*
+CLASSES TAILWIND UTILISÉES:
+
+Logo:
+- h-12 w-12 : Taille icône
+- bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 : Gradient multicolore
+- rounded-xl : Coins arrondis
+- group-hover:rotate-12 : Rotation au hover
+
+Menu Desktop:
+- hidden lg:flex : Caché sur mobile, visible desktop
+- gap-8 : Espacement entre items
+- text-sm uppercase tracking-wide : Typographie
+
+Liens:
+- hover:text-blue-400 : Couleur au hover
+- transition-colors : Animation fluide
+
+Dropdown:
+- opacity-0 invisible : Caché par défaut
+- group-hover:opacity-100 group-hover:visible : Affiché au hover
+- bg-gray-900/95 : Fond semi-transparent
+- backdrop-blur-lg : Effet blur
+
+Actions:
+- bg-white/10 : Fond semi-transparent
+- hover:bg-white/20 : Éclaircissement au hover
+- rounded-full : Forme circulaire
+
+Panier:
+- bg-gradient-to-r from-blue-500 to-purple-600 : Gradient
+- hover:shadow-2xl hover:shadow-blue-500/50 : Ombre au hover
+- hover:scale-105 : Agrandissement au hover
+
+Menu Mobile:
+- fixed inset-0 : Plein écran
+- bg-black/95 backdrop-blur-lg : Fond sombre + blur
+- z-50 : Au-dessus de tout
+
+JAVASCRIPT REQUIS:
+
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('hidden');
+    document.body.style.overflow = menu.classList.contains('hidden') ? '' : 'hidden';
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const menu = document.getElementById('mobileMenu');
+        if (!menu.classList.contains('hidden')) {
+            toggleMobileMenu();
+        }
+    }
+});
+
+DÉPENDANCES:
+- Tailwind CSS
+- Font Awesome 6.5.1
+- Google Fonts: Urbanist
+
+PERSONNALISATION:
+1. Changer les couleurs du gradient logo: from-blue-500 via-purple-500 to-pink-500
+2. Modifier le badge panier: bg-red-500
+3. Ajuster le blur: backdrop-filter: blur(20px)
+4. Changer la police: font-family: 'Urbanist'
+*/

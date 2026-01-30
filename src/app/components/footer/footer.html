@@ -1,0 +1,214 @@
+<!-- ============================================
+     FOOTER SUBLIME - Template HTML
+     À intégrer dans votre projet Angular/React/Vue
+     ============================================ -->
+
+<footer class="relative gradient-bg overflow-hidden grain-texture">
+    
+    <!-- Éléments décoratifs flottants -->
+    <div class="float-element w-96 h-96 bg-blue-500 top-10 left-10" style="animation-delay: 0s;"></div>
+    <div class="float-element w-80 h-80 bg-purple-500 bottom-20 right-20" style="animation-delay: 2s;"></div>
+    <div class="float-element w-64 h-64 bg-pink-500 top-1/2 left-1/2" style="animation-delay: 4s;"></div>
+
+    <!-- Contenu principal -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
+        
+        <!-- Section supérieure -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+            
+            <!-- Brand Section - Large -->
+            <div class="lg:col-span-5">
+                <div class="mb-8">
+                    <!-- Logo -->
+                    <div class="flex items-center gap-4 mb-6 group cursor-pointer">
+                        <div class="relative">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:rotate-12 transition-all duration-500">
+                                <i class="fas fa-bolt text-white text-3xl"></i>
+                            </div>
+                            <div class="absolute -inset-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity"></div>
+                        </div>
+                        <div>
+                            <h3 class="text-4xl font-display font-black text-white tracking-tight">LeauStore</h3>
+                            <p class="text-blue-300 text-sm font-semibold">Premium Tech Shop</p>
+                        </div>
+                    </div>
+
+                    <!-- Tagline -->
+                    <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                        Votre destination <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 font-bold">premium</span> pour les dernières technologies. 
+                        Des produits de qualité, livrés avec passion. ⚡
+                    </p>
+
+                    <!-- Newsletter -->
+                    <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10">
+                        <h4 class="text-white font-bold text-lg mb-3 flex items-center gap-2">
+                            <i class="fas fa-envelope-open-text text-blue-400"></i>
+                            Newsletter Exclusive
+                        </h4>
+                        <p class="text-gray-400 text-sm mb-4">
+                            -10% sur votre première commande + accès anticipé aux ventes
+                        </p>
+                        <form class="flex gap-2" onsubmit="handleNewsletter(event)">
+                            <input 
+                                type="email" 
+                                placeholder="votre@email.com"
+                                required
+                                class="newsletter-input flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 transition-all">
+                            <button 
+                                type="submit"
+                                class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-xl hover:shadow-lg hover:shadow-blue-500/50 transition-all hover:scale-105">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Sections -->
+            <div class="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
+                
+                <!-- Shop -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+                        <span class="w-1 h-6 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full"></span>
+                        Shop
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="link-glow text-gray-400 hover:text-white transition-colors inline-block">Ordinateurs</a></li>
+                        <li><a href="#" class="link-glow text-gray-400 hover:text-white transition-colors inline-block">Smartphones</a></li>
+                        <li><a href="#" class="link-glow text-gray-400 hover:text-white transition-colors inline-block">Tablettes</a></li>
+                        <li><a href="#" class="link-glow text-gray-400 hover:text-white transition-colors inline-block">Audio</a></li>
+                        <li><a href="#" class="link-glow text-gray-400 hover:text-white transition-colors inline-block">Accessoires</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+                        <span class="w-1 h-6 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full"></span>
+                        Support
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="link-glow text-gray-400 hover:text-white transition-colors inline-block">Centre d'aide</a></li>
+                        <li><a href="#" class="link-glow text-gray-400 hover:text-white transition-colors inline-block">Contact</a></li>
+                        <li><a href="#" class="link-glow text-gray-400 hover:text-white transition-colors inline-block">Livraison</a></li>
+                        <li><a href="#" class="link-glow text-gray-400 hover:text-white transition-colors inline-block">Retours</a></li>
+                        <li><a href="#" class="link-glow text-gray-400 hover:text-white transition-colors inline-block">Garantie</a></li>
+                    </ul>
+                </div>
+
+                <!-- Entreprise -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+                        <span class="w-1 h-6 bg-gradient-to-b from-pink-500 to-orange-500 rounded-full"></span>
+                        Entreprise
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="link-glow text-gray-400 hover:text-white transition-colors inline-block">À propos</a></li>
+                        <li><a href="#" class="link-glow text-gray-400 hover:text-white transition-colors inline-block">Blog</a></li>
+                        <li><a href="#" class="link-glow text-gray-400 hover:text-white transition-colors inline-block">Carrières</a></li>
+                        <li><a href="#" class="link-glow text-gray-400 hover:text-white transition-colors inline-block">Partenaires</a></li>
+                        <li><a href="#" class="link-glow text-gray-400 hover:text-white transition-colors inline-block">Presse</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-blue-500/50 transition-all group">
+                <div class="text-3xl font-black text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 transition-all">
+                    50K+
+                </div>
+                <div class="text-gray-400 text-sm font-semibold">Clients satisfaits</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-purple-500/50 transition-all group">
+                <div class="text-3xl font-black text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 transition-all">
+                    5,000+
+                </div>
+                <div class="text-gray-400 text-sm font-semibold">Produits en stock</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-pink-500/50 transition-all group">
+                <div class="text-3xl font-black text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-pink-400 group-hover:to-orange-400 transition-all">
+                    4.9★
+                </div>
+                <div class="text-gray-400 text-sm font-semibold">Note moyenne</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-orange-500/50 transition-all group">
+                <div class="text-3xl font-black text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-yellow-400 transition-all">
+                    24h
+                </div>
+                <div class="text-gray-400 text-sm font-semibold">Livraison express</div>
+            </div>
+        </div>
+
+        <!-- Divider avec effet -->
+        <div class="relative mb-12">
+            <div class="absolute inset-0 flex items-center">
+                <div class="w-full border-t border-white/10"></div>
+            </div>
+            <div class="relative flex justify-center">
+                <div class="px-6 bg-gradient-to-r from-transparent via-slate-800 to-transparent">
+                    <div class="w-12 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <!-- Copyright -->
+            <div class="text-gray-400 text-sm text-center md:text-left">
+                <p>© 2026 <span class="text-white font-bold">LeauStore</span>. Tous droits réservés.</p>
+                <p class="text-xs text-gray-500 mt-1">Conçu avec ❤️ par l'équipe TechStore</p>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex items-center gap-4">
+                <a href="#" class="social-icon w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 border border-white/10">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 border border-white/10">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 border border-white/10">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-icon w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 border border-white/10">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-icon w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 border border-white/10">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+
+            <!-- Legal Links -->
+            <div class="flex items-center gap-6 text-sm">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">Mentions légales</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">Confidentialité</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">CGU</a>
+            </div>
+        </div>
+
+        <!-- Payment Methods -->
+        <div class="mt-8 pt-8 border-t border-white/10">
+            <div class="flex flex-wrap items-center justify-center gap-6 opacity-50 hover:opacity-100 transition-opacity">
+                <div class="flex items-center gap-2 text-gray-400 text-xs">
+                    <i class="fas fa-lock"></i>
+                    <span>Paiement 100% sécurisé</span>
+                </div>
+                <i class="fab fa-cc-visa text-3xl text-gray-400"></i>
+                <i class="fab fa-cc-mastercard text-3xl text-gray-400"></i>
+                <i class="fab fa-cc-paypal text-3xl text-gray-400"></i>
+                <i class="fab fa-cc-amex text-3xl text-gray-400"></i>
+                <i class="fab fa-apple-pay text-3xl text-gray-400"></i>
+                <i class="fab fa-google-pay text-3xl text-gray-400"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-top" onclick="scrollToTop()" aria-label="Retour en haut">
+    <i class="fas fa-arrow-up text-white text-xl"></i>
+</button>
